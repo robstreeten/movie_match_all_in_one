@@ -15,6 +15,10 @@ app.mount("/", StaticFiles(directory="frontend/build", html=True), name="static"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 dds_api_url = "https://dds-apife.filmbankconnect.com/arts/catalogue/v1/all-contents"
 
+@app.get("/test")
+async def test():
+    return {"status": "Backend is working"}
+
 @app.post("/match-movies")
 async def match_movies(request: Request):
     data = await request.json()
