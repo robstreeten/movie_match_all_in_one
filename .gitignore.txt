@@ -1,0 +1,5 @@
+# Ignore all build folders
+build/
+
+# ...except for the one we need
+!frontend/build/
